@@ -39,3 +39,15 @@ class Ball {
   }
 }
 let balls = [];
+function init() {
+  balls = [];
+  for (let i = 0; i < 20; i++) {
+    let radius = Math.random() * 30 + 10;
+    let x = Math.random() * (canvas.width - radius * 2) + radius;
+    let y = Math.random() * (canvas.height - radius * 2) + radius;
+    let dx = (Math.random() - 0.5) * 4;
+    let dy = (Math.random() - 0.5) * 4;
+    let color = colors[Math.floor(Math.random() * colors.length)];
+    balls.push(new Ball(x, y, radius, color, dx, dy));
+  }
+}
