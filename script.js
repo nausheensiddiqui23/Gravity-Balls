@@ -51,3 +51,8 @@ function init() {
     balls.push(new Ball(x, y, radius, color, dx, dy));
   }
 }
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  balls.forEach(ball => ball.update());
+  requestAnimationFrame(animate);
+}
