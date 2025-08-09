@@ -56,3 +56,11 @@ function animate() {
   balls.forEach(ball => ball.update());
   requestAnimationFrame(animate);
 }
+init();
+animate();
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  init();
+});
