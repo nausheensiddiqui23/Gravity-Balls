@@ -30,3 +30,12 @@ class Ball {
     } else {
       this.dy += gravity;
     }
+    if (this.x + this.radius + this.dx > canvas.width || this.x - this.radius + this.dx < 0) {
+      this.dx = -this.dx;
+    }
+    this.x += this.dx;
+    this.y += this.dy;
+    this.draw();
+  }
+}
+let balls = [];
