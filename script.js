@@ -23,3 +23,10 @@ class Ball {
     ctx.fill();
     ctx.closePath();
   }
+ update() {
+    // Bounce off floor
+    if (this.y + this.radius + this.dy > canvas.height) {
+      this.dy = -this.dy * friction;
+    } else {
+      this.dy += gravity;
+    }
